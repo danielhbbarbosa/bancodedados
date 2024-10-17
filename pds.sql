@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/10/2024 às 02:05
+-- Tempo de geração: 18/10/2024 às 01:59
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -70,6 +70,20 @@ CREATE TABLE `professor` (
   `escola` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `turma`
+--
+
+CREATE TABLE `turma` (
+  `id_turma` int(11) NOT NULL,
+  `nome_turma` int(11) NOT NULL,
+  `capacidade` int(11) NOT NULL,
+  `ano_letivo` year(4) NOT NULL,
+  `periodo_letivo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -94,6 +108,12 @@ ALTER TABLE `professor`
   ADD PRIMARY KEY (`id_prof`,`reg_prof`);
 
 --
+-- Índices de tabela `turma`
+--
+ALTER TABLE `turma`
+  ADD PRIMARY KEY (`id_turma`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -102,6 +122,12 @@ ALTER TABLE `professor`
 --
 ALTER TABLE `disciplina`
   MODIFY `id_disciplina` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `turma`
+--
+ALTER TABLE `turma`
+  MODIFY `id_turma` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
